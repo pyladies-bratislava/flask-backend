@@ -1,6 +1,6 @@
 from flask import Flask, request
 
-from backend.chatbot import bot
+#from backend.chatbot import bot
 from backend.events import get_google_cal_events
 from backend.scraping import get_pyladies_about_info
 
@@ -25,8 +25,8 @@ def get_events():
     return {"events": events}
 
 
-@app.route("/chatbot", methods=["POST"])
-def post_interaction():
-    interaction = request.json["interaction"]
-    response = bot.get_response(interaction)
-    return response.text
+# @app.route("/chatbot", methods=["POST"])
+# def post_interaction():
+#     interaction = request.json["interaction"]
+#     response = bot.get_response(interaction)
+#     return response.text
