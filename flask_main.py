@@ -1,8 +1,8 @@
 from flask import Flask, request
 
-from .chatbot import bot
-from .events import get_google_cal_events
-from .scraping import get_pyladies_about_info
+from backend.chatbot import bot
+from backend.events import get_google_cal_events
+from backend.scraping import get_pyladies_about_info
 
 
 app = Flask(__name__)
