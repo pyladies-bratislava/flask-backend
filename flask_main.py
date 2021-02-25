@@ -9,6 +9,12 @@ from backend.scraping import get_pyladies_about_info
 app = Flask(__name__)
 CORS(app)
 
+
+@app.route("/health")
+def get_health():
+    return {"health": "ok"}
+
+
 @app.route("/menu")
 def get_menu():
     return {"menu": ["Meetups Calendar", "Chat Bot", "Scholarships", "About us", "Vote for a topic"]}
