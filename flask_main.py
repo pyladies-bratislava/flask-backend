@@ -3,7 +3,7 @@ from flask_cors import CORS
 
 #from backend.chatbot import bot
 from backend.events import get_google_cal_events
-from backend.scraping import get_pyladies_about_info
+from backend.about import get_pyladies_about_text
 
 
 app = Flask(__name__)
@@ -22,8 +22,8 @@ def get_menu():
 
 @app.route("/about")
 def get_about():
-    pyladies_about_info = get_pyladies_about_info()
-    return {"about": "From international Pyladies website:" + pyladies_about_info}
+    about = get_pyladies_about_text()
+    return {"about": about}
 
 
 @app.route("/events")
