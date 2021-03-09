@@ -7,6 +7,7 @@ from google.auth.transport.requests import Request
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+CLIENT_SECRETS_FILE = "google-credentials.json"
 
 
 def google_cal_APIs_authorization():
@@ -32,8 +33,7 @@ def google_cal_APIs_authorization():
 
         # if accessing 1st time
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                    'google-credentials.json', SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
             creds = flow.run_local_server(port=0)
 
             # Save the credentials with refresh_pickle
@@ -47,12 +47,13 @@ def google_cal_APIs_authorization():
     return creds
 
 
-def get_google_cal_events():
+def get_google_cal_events(credentials):
     """ Calls the Calendar API with access token,
     returns 5 upcoming events as list """
 
-    creds = google_cal_APIs_authorization()
-    service = build('calendar', 'v3', credentials=creds)
+    #creds = google_cal_APIs_authorization()
+
+    service = build('calendar', 'v3', credentials=credentials)
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print('Getting the upcoming 5 events')
     events_result = service.events().list(calendarId='primary', timeMin=now,
