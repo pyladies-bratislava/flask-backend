@@ -88,7 +88,7 @@ def oauth2callback():
       'client_secret': credentials.client_secret,
       'scopes': credentials.scopes
     }
-    print("Credentials: {credentials}")
+    print(f"Credentials: {credentials}")
 
     return flask.redirect(flask.url_for('get_events'))
 
