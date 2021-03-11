@@ -52,7 +52,7 @@ def get_google_cal_events(credentials):
     returns 5 upcoming events as list """
 
     #creds = google_cal_APIs_authorization()
-    print(f"Credentials in google cal events: {credentials}")
+    print(f"Credentials in google cal events: {credentials.__dict__}")
     service = build('calendar', 'v3', credentials=credentials)
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print('Getting the upcoming 5 events')
