@@ -46,8 +46,7 @@ def get_events():
 
 @app.route('/authorize')
 def authorize():
-    # Create a flow instance to manage the OAuth 2.0 Authorization Grant Flow
-    # steps.
+    # Create a flow instance to manage the OAuth 2.0 Authorization Grant Flow steps.
     flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(CLIENT_SECRETS_FILE, scopes=SCOPES)
     flow.redirect_uri = flask.url_for('oauth2callback', _external=True)
     authorization_url, state = flow.authorization_url(
@@ -89,6 +88,7 @@ def oauth2callback():
       'client_secret': credentials.client_secret,
       'scopes': credentials.scopes
     }
+    print("Credentials: {credentials}")
 
     return flask.redirect(flask.url_for('get_events'))
 
