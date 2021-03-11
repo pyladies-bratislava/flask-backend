@@ -34,8 +34,6 @@ def get_about():
 
 @app.route("/events")
 def get_events():
-    flask.session.clear()
-
     if 'credentials' not in flask.session:
         return flask.redirect('authorize')
 
@@ -90,7 +88,9 @@ def oauth2callback():
       'client_secret': credentials.client_secret,
       'scopes': credentials.scopes
     }
-    print(f"Credentials: {credentials.__dict__}")
+
+    if credentials.refresh_token is None:
+        print("Warning: no refresh token.")
 
     return flask.redirect(flask.url_for('get_events'))
 
