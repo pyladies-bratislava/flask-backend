@@ -7,7 +7,7 @@ from google.auth.transport.requests import Request
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
-CLIENT_SECRETS_FILE = "google-credentials.json"
+SERVICE_ACCOUNT_FILE = "google-credentials.json"
 
 
 def google_cal_APIs_authorization():
@@ -51,7 +51,6 @@ def get_google_cal_events(credentials):
     """ Calls the Calendar API with access token,
     returns 5 upcoming events as list """
 
-    #creds = google_cal_APIs_authorization()
     service = build('calendar', 'v3', credentials=credentials)
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print('Getting the upcoming 5 events')
