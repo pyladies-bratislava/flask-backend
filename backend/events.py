@@ -46,6 +46,8 @@ SERVICE_ACCOUNT_FILE = "google-credentials.json"
 #
 #     return creds
 
+CALENDAR_ID = "bratislava@pyladies.com"
+
 
 def get_google_cal_events(credentials):
     """ Calls the Calendar API with access token,
@@ -54,7 +56,7 @@ def get_google_cal_events(credentials):
     service = build('calendar', 'v3', credentials=credentials)
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print('Getting the upcoming 5 events')
-    events_result = service.events().list(calendarId='primary', timeMin=now,
+    events_result = service.events().list(calendarId=CALENDAR_ID, timeMin=now,
                                         maxResults=5, singleEvents=True,
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])
