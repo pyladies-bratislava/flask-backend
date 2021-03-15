@@ -10,41 +10,41 @@ SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 SERVICE_ACCOUNT_FILE = "google-credentials.json"
 
 
-def google_cal_APIs_authorization():
-    """ Authorizes Google Calendar API with client_secret.json,
-    creates credentials_with_refresh_token.pickle with access and refresh tokens
-    when the authorization flow completes for the firsttime; 
-    access token from credentials.pickle is used then further """
-
-    creds = None
-
-    # if valid access token from credentials_token.pickle
-    if os.path.exists('credentials.pickle'):
-        with open('credentials.pickle', 'rb') as token:
-            creds = pickle.load(token)
-
-    # if invalid access token use refresh_token to get new access token
-    if not creds or creds and creds.expired or not creds.valid:
-        if os.path.exists('credentials_with_refresh_token.pickle'):
-            with open('credentials_with_refresh_token.pickle', 'rb') as token:
-                creds = pickle.load(token)
-            print('refreshing')
-            creds.refresh(Request())    
-
-        # if accessing 1st time
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
-            creds = flow.run_local_server(port=0)
-
-            # Save the credentials with refresh_pickle
-            with open('credentials_with_refresh_token.pickle', 'wb') as token:
-                pickle.dump(creds, token)
-
-        # Save the credentials with access token without refresh_token
-        with open('credentials.pickle', 'wb') as token:
-            pickle.dump(creds, token)
-
-    return creds
+# def google_cal_APIs_authorization():
+#     """ Authorizes Google Calendar API with client_secret.json,
+#     creates credentials_with_refresh_token.pickle with access and refresh tokens
+#     when the authorization flow completes for the firsttime;
+#     access token from credentials.pickle is used then further """
+#
+#     creds = None
+#
+#     # if valid access token from credentials_token.pickle
+#     if os.path.exists('credentials.pickle'):
+#         with open('credentials.pickle', 'rb') as token:
+#             creds = pickle.load(token)
+#
+#     # if invalid access token use refresh_token to get new access token
+#     if not creds or creds and creds.expired or not creds.valid:
+#         if os.path.exists('credentials_with_refresh_token.pickle'):
+#             with open('credentials_with_refresh_token.pickle', 'rb') as token:
+#                 creds = pickle.load(token)
+#             print('refreshing')
+#             creds.refresh(Request())
+#
+#         # if accessing 1st time
+#         else:
+#             flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
+#             creds = flow.run_local_server(port=0)
+#
+#             # Save the credentials with refresh_pickle
+#             with open('credentials_with_refresh_token.pickle', 'wb') as token:
+#                 pickle.dump(creds, token)
+#
+#         # Save the credentials with access token without refresh_token
+#         with open('credentials.pickle', 'wb') as token:
+#             pickle.dump(creds, token)
+#
+#     return creds
 
 
 def get_google_cal_events(credentials):
