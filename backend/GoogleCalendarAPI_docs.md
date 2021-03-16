@@ -24,7 +24,7 @@ contains credentials such as a generated unique e-mail address and a public/priv
 
 ##### Step 3: _Storing Service Account Credentials in Heroku_
 When our website's backend hosted in [Heroku server](https://dashboard.heroku.com/apps/bratislava-flask-backend/) 
-calls the Google Calendar APIs from Google Services it uses Service Account Credentials credentials for authentification. 
+calls the Google Calendar APIs from Google Services it uses the Service Account Credentials credentials for authentication. 
 The credentials are stored as configuration variables in Heroku server.
 
 ##### Step 4: _Request and authentification of the Google Calendar APIs_
