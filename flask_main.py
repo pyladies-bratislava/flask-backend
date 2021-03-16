@@ -3,7 +3,6 @@ import os
 from google.oauth2 import service_account
 from flask import Flask, request
 from flask_cors import CORS
-
 #from backend.chatbot import bot
 from backend.events import get_google_cal_events, SERVICE_ACCOUNT_FILE, SCOPES
 from backend.scraping import get_pyladies_about_info
@@ -12,6 +11,7 @@ from backend.scraping import get_pyladies_about_info
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev')
 CORS(app, resources={r"/*": {"origins": "*"}})
+BASE_DIR = app.root_path
 
 
 @app.route("/health")
@@ -26,8 +26,8 @@ def get_menu():
 
 @app.route("/about")
 def get_about():
-    pyladies_about_info = get_pyladies_about_info()
-    return {"about": "From international Pyladies website:" + pyladies_about_info}
+    about = get_pyladies_about_text()
+    return {"about": about}
 
 
 @app.route("/events")
