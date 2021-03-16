@@ -8,7 +8,7 @@ from backend.about import get_pyladies_about_text
 
 app = Flask(__name__)
 CORS(app)
-
+BASE_DIR = app.root_path
 
 @app.route("/health")
 def get_health():
