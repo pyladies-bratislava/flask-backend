@@ -20,7 +20,7 @@ In the [Google API Console](https://console.cloud.google.com/iam-admin/serviceac
 ##### Step 2: _Obtaining Service Account_
 For reaching Google Calendar APIs via server-to-server interaction the OAuth2.0 aouthorization with _service account_ is necessary.
 The _service account_ can be obtained in the [Google API Console](https://console.cloud.google.com/iam-admin/serviceaccounts) and 
-possess credentials such as generated unique e-mail address and a public key - private key pair for authentification.
+contains credentials such as a generated unique e-mail address and a public/private key pair for authentication.
 
 ##### Step 3: _Storing Service Account Credentials in Heroku_
 When our website's backend hosted in [Heroku server](https://dashboard.heroku.com/apps/bratislava-flask-backend/) 
