@@ -2,7 +2,7 @@
 
 ##### What is API?
 API is an abbreviation for an _Application Programming Interface_ which serves for exchanging data. 
-APIs define the format of the data together with the way of reaching them, e.g request types or authentification methods.
+APIs define the format of the data together with the way of reaching them, e.g request types or authentication methods.
 
 ##### Google APIs
 Google Services offer Google APIs for communication and integration with other services. 
