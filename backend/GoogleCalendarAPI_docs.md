@@ -33,4 +33,4 @@ For requesting Google Calendar APIs from our website's backend using python thes
  - [google-auth-oauthlib](https://pypi.org/project/google-auth-oauthlib/)
  - [google-auth](https://pypi.org/project/google-auth/)
 
-The credentials stored in Heroku are used for authentification.
+The credentials stored in Heroku are used for authentication.
