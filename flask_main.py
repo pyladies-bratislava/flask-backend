@@ -3,9 +3,10 @@ import os
 from google.oauth2 import service_account
 from flask import Flask, request
 from flask_cors import CORS
+
 #from backend.chatbot import bot
 from backend.events import get_google_cal_events, SERVICE_ACCOUNT_FILE, SCOPES
-from backend.scraping import get_pyladies_about_info
+from backend.about import get_pyladies_about_text
 
 
 app = Flask(__name__)
