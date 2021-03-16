@@ -27,7 +27,7 @@ When our website's backend hosted in [Heroku server](https://dashboard.heroku.co
 calls the Google Calendar APIs from Google Services it uses Service Account Credentials credentials for authentification. 
 The credentials are stored as configuration variables in Heroku server.
 
-##### Step 4: Request and authentification of the Google Calendar APIs
+##### Step 4: _Request and authentification of the Google Calendar APIs_
 For requesting Google Calendar APIs from our website's backend using python these ibraries are used:
  - [google-api-python-client](https://pypi.org/project/google-api-python-client/)
  - [google-auth-oauthlib](https://pypi.org/project/google-auth-oauthlib/)
