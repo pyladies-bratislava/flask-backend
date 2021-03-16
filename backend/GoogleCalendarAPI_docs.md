@@ -1,6 +1,6 @@
 # Google Calendar APIs in Pyladies Bratislava website
 
-##### What is API?
+##### What is an API?
 API is an abbreviation for an _Application Programming Interface_ which serves for exchanging data. 
 APIs define the format of the data together with the way of reaching them, e.g request types or authentication methods.
 
