@@ -11,8 +11,8 @@ Pyladies is an international organization which unites women interested in progr
 
 
 
- 
-  
 
-In Bratislava we run a local Pyladies group 'Pyladies Bratislava'. We meet once a month and have fun with Python. 
+
+
+In Bratislava we run a local Pyladies group 'Pyladies Bratislava'. We meet once a month and have fun with Python.
 Pyladies Bratislava is open to everybody to join. We encourage mainly women and minorities, but everyone willing to participate is welcome. So if you are a total beginner willing to dive into Python or already a skilled programmer who would like to help with spreading Python knowledge and meet other Pythonistas, feel free to contact us or visit our monthly meetups.

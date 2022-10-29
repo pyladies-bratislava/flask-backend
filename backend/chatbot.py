@@ -14,4 +14,4 @@ bot = ChatBot(
 
 trainer = ChatterBotCorpusTrainer(bot)
 
-trainer.train('chatterbot.corpus.english')
+trainer.train("chatterbot.corpus.english")

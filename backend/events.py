@@ -6,7 +6,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 # If modifying these scopes, delete the file token.pickle.
-SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"]
 SERVICE_ACCOUNT_FILE = "google-credentials.json"
 
 
@@ -50,21 +50,29 @@ CALENDAR_ID = "bratislava@pyladies.com"
 
 
 def get_google_cal_events(credentials):
-    """ Calls the Calendar API with access token,
-    returns 5 upcoming events as list """
+    """Calls the Calendar API with access token,
+    returns 5 upcoming events as list"""
 
-    service = build('calendar', 'v3', credentials=credentials)
-    now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
-    print('Getting the upcoming 5 events')
-    events_result = service.events().list(calendarId=CALENDAR_ID, timeMin=now,
-                                        maxResults=5, singleEvents=True,
-                                        orderBy='startTime').execute()
-    events = events_result.get('items', [])
+    service = build("calendar", "v3", credentials=credentials)
+    now = datetime.datetime.utcnow().isoformat() + "Z"  # 'Z' indicates UTC time
+    print("Getting the upcoming 5 events")
+    events_result = (
+        service.events()
+        .list(
+            calendarId=CALENDAR_ID,
+            timeMin=now,
+            maxResults=5,
+            singleEvents=True,
+            orderBy="startTime",
+        )
+        .execute()
+    )
+    events = events_result.get("items", [])
 
     if not events:
-        print('No upcoming events found.')
+        print("No upcoming events found.")
     for event in events:
-        start = event['start'].get('dateTime', event['start'].get('date'))
-        print(start, event['summary'])
+        start = event["start"].get("dateTime", event["start"].get("date"))
+        print(start, event["summary"])
 
     return events
