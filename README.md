@@ -45,11 +45,10 @@ FLASK_ENV=development
 To run FastAPI:
 ~~~
 (.venv)$ uvicorn fastapi_main:app --reload
-~~~ 
+~~~
 
 ### How to create a file in windows terminal:
 
 1. Type copy con testfile.txt, but replace testfile with the desired file name. Press Enter.
 2. Type your desired text. This is rudimentary text editor, but it's good for quick notes or code. You can use the Enter key as you type to move to the next line if you wish.
 3. Press Ctrl+Z when you're finished editing the file. This saves everything you've typed into the file.
-
