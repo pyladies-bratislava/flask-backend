@@ -2,7 +2,7 @@ beautifulsoup4==4.9.2
 black==22.10.0
 chatterbot==1.0.4
 fastapi==0.61.1
-flask==1.1.2
+flask==2.2.2
 Flask-Cors==3.0.9
 google-api-python-client==1.12.3
 google-auth-httplib2==0.0.4
