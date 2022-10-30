@@ -5,6 +5,3 @@ google-auth-httplib2==0.0.4
 google-auth-oauthlib==0.4.1
 pre-commit==2.20.0
 python-dotenv==0.14.0
-flask==2.2.2
-Flask-Cors==3.0.9
-gunicorn
