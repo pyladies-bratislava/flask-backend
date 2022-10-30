@@ -1,7 +1,7 @@
 import os
 
 from google.oauth2 import service_account
-from flask import Flask, request
+from flask import Flask
 from flask_cors import CORS
 
 # from backend.chatbot import bot
